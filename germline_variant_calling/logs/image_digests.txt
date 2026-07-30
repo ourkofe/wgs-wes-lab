@@ -1,0 +1,29 @@
+2026-07-29 01:11:37 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-07-29 01:15:21 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-07-29 01:20:47 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-07-29 01:26:18 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-07-29 01:27:21 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-07-30 00:20:08 | biocontainers/fastqc:v0.11.9_cv8 -> 
+unknown
+2026-07-30 00:20:08 | quay.io/biocontainers/fastp:0.23.4--h5f740d0_0 -> 
+unknown
+2026-07-30 00:20:08 | staphb/bwa:latest -> 
+unknown
+2026-07-30 00:20:08 | staphb/samtools:latest -> 
+unknown
+2026-07-30 00:20:08 | staphb/bwa:latest -> 
+unknown
+2026-07-30 00:24:21 | biocontainers/fastqc:v0.11.9_cv8 -> biocontainers/fastqc@sha256:82e5fa413d275a72c3de76e400a3d12a93ebdb4e1ef5391d7f7e9ce686671d8d
+2026-07-30 00:46:28 | quay.io/biocontainers/fastp:0.23.4--h5f740d0_0 -> quay.io/biocontainers/fastp@sha256:b635334b6bb25eba14d0b8c240a45a51234984247d79715f8cd0b7959df850c2
+2026-07-30 00:55:54 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-07-30 00:55:54 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-07-30 04:02:55 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-07-30 11:51:34 | broadinstitute/gatk:4.6.2.0 -> 
+unknown
+2026-07-30 15:54:01 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-07-30 16:16:12 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-07-30 17:55:15 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-07-30 20:53:13 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-07-30 21:00:01 | pkrusche/hap.py:latest -> 
+unknown
+2026-07-30 21:25:05 | pkrusche/hap.py:latest -> pkrusche/hap.py@sha256:f8682aa2681e6630cca866ffd5b277da5acd09281d8b08d1fe34584276e9ef75
