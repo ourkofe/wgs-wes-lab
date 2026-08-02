@@ -1,0 +1,5 @@
+2026-07-31 18:46:38 | biocontainers/fastqc:v0.11.9_cv8 -> biocontainers/fastqc@sha256:82e5fa413d275a72c3de76e400a3d12a93ebdb4e1ef5391d7f7e9ce686671d8d
+2026-07-31 19:05:24 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-07-31 19:06:52 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-08-02 20:12:44 | quay.io/biocontainers/mapdamage2:2.2.3--py312h4711d71_0 -> 
+unknown
