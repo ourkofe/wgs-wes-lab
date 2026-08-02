@@ -1,0 +1,4 @@
+2026-08-02 11:38:24,748	INFO	main: Started with the command: /usr/local/bin/mapDamage -i results/align/ERR2000716.sorted.bam -r ref/GRCh38_no_alt.fasta -d results/mapdamage/ERR2000716 --no-stats
+2026-08-02 12:02:24,335	DEBUG	main: BAM read in 1443.367992 seconds
+2026-08-02 12:02:27,704	INFO	main: Successful run
+2026-08-02 12:02:27,705	DEBUG	main: Run completed in 1446.738583 seconds
