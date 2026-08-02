@@ -3,3 +3,7 @@
 2026-07-31 19:06:52 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
 2026-08-02 20:12:44 | quay.io/biocontainers/mapdamage2:2.2.3--py312h4711d71_0 -> 
 unknown
+2026-08-03 00:52:03 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-03 00:55:25 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-03 01:48:57 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-03 02:02:59 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
