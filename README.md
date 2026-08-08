@@ -108,12 +108,14 @@ BQSR은 생략하는 게 일반적. 자세한 건 `somatic_variant_calling/` 참
 따로 둡니다.
 
 ## 폴더 구조
+'''
 WGS_WES_Practice/
 ├── README.md - 이 파일
 ├── .gitignore
 ├── germline_variant_calling/
 ├── neanderthal_ancient_dna/
 └── somatic_variant_calling/
+'''
 
 ## 참고
 
