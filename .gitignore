@@ -6,6 +6,8 @@ results/*/align/
 results/*/*.bam
 results/*/*.bai
 *.cram
+**/results/*/*.bam
+**/results/*/*.bai
 
 # R 관련
 *.rds
@@ -13,6 +15,8 @@ results/*/*.bai
 # 최상위 nohup 실행 로그 (logs/ 폴더 안의 로그와 중복)
 *.log
 !logs/*.log
+somatic_variant_calling/nohup.out
 
 # BWA aln 중간 산출물 (sai 파일)
 results/*/*.sai
+tmp/

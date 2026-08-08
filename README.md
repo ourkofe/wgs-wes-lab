@@ -52,68 +52,83 @@ WGS(전장 유전체 시퀀싱)/WES(엑솜 시퀀싱) 기반 변이 분석 실�
 
 ## 기본 워크플로우: Germline Variant Calling (GATK Best Practices)
 
-WGS든 WES든 뼈대는 거의 동일합니다. WES는 여기에 "엑솜 캡처 대상 영역"
-관련 QC 단계가 하나 더 붙는 정도가 차이입니다.
+WGS든 WES든 뼈대는 거의 동일합니다.
 
-raw fastq
-│
-▼
-QC (FastQC) - 리드 품질 확인
-│
-▼
-트리밍 (fastp) - 저품질/어댑터 제거
-│
-▼
-정렬 (BWA-MEM) - 레퍼런스 게놈에 매핑
-│
-▼
-정렬 후처리 (Mark Duplicates) - PCR 중복 리드 표시
-│
-▼
-BQSR (Base Quality Score Recalibration) - 염기 품질 점수 보정
-│
-▼
-변이 호출 (HaplotypeCaller) - 개별 샘플의 후보 변이 발견
-│
-▼
-Joint Genotyping - 여러 샘플을 합쳐서 최종 변이 집합 결정
-│
-▼
-변이 필터링 (VQSR 또는 hard filter) - 신뢰도 낮은 변이 걸러내기
-│
-▼
-변이 주석 (VEP/ANNOVAR) - 변이의 기능적 의미 부여
+1. raw fastq
+2. QC (FastQC) — 리드 품질 확인
+3. 트리밍 (fastp) — 저품질/어댑터 제거
+4. 정렬 (BWA-MEM) — 레퍼런스 게놈에 매핑
+5. 정렬 후처리 (MarkDuplicates) — PCR 중복 리드 표시
+6. BQSR (Base Quality Score Recalibration) — 염기 품질 점수 보정
+7. 변이 호출 (HaplotypeCaller) — 후보 변이 발견
+8. 변이 필터링 (hard filter) — 신뢰도 낮은 변이 걸러내기
+9. (선택) 변이 주석 (VEP/ANNOVAR) — 변이의 기능적 의미 부여
 
-**WES 전용 추가 단계**: 정렬 직후 "엑솜 캡처 대상 영역(target region)에
-리드가 얼마나 잘 몰렸는지"(on-target rate) QC를 하나 더 거칩니다. 이게
-낮으면 캡처 실험 자체가 실패한 것으로 봐야 합니다.
+**실제로는 단일 샘플이면 Joint Genotyping은 생략 가능** (여러 샘플을 합쳐
+서 유전형을 같이 결정하는 단계라, 샘플 하나만 볼 때는 필요 없음). 실습에서도
+HG002 하나만 다룰 땐 이 단계 없이 진행함.
 
-## 도구 (계획)
+**WES라면 추가할 단계**: 정렬 직후 "엑솜 캡처 대상 영역(target region)에
+리드가 얼마나 잘 몰렸는지"(on-target rate) QC를 하나 더 거침. 이게 낮으면
+캡처 실험 자체가 실패한 것으로 봐야 함.
+
+**Somatic(종양/정상)은 다른 갈래**: HaplotypeCaller 대신 Mutect2를 쓰고,
+BQSR은 생략하는 게 일반적. 자세한 건 `somatic_variant_calling/` 참고.
+
+## 도구
 
 | 단계 | 도구 |
 |---|---|
-| QC/트리밍 | FastQC, fastp (RNA-seq 실습과 동일) |
-| 정렬 | BWA-MEM (gold standard) |
-| 변이 호출 파이프라인 | GATK (gold standard, Broad Institute 공식) |
-| 변이 주석 | VEP 또는 ANNOVAR |
+| QC/트리밍 | FastQC, fastp |
+| 정렬 | BWA-MEM / BWA aln (짧은 리드용) |
+| 변이 호출 (germline) | GATK HaplotypeCaller |
+| 변이 호출 (somatic) | GATK Mutect2 |
+| 정확도 검증 | hap.py (germline), GATK SelectVariants concordance (somatic, 고대DNA) |
+| 고대 DNA 손상 분석 | mapDamage2 |
+| 변이 주석 (예정) | VEP 또는 ANNOVAR |
 
 ## 실습 목록
 
-### 기초
-- [ ] **germline_variant_calling** - GATK best practices로 생식세포 변이 호출
+### 완료
+- [x] **germline_variant_calling** — GIAB HG002(chr20)로 GATK Best Practices
+  완주. hap.py 검증 결과 SNP F1 99.25%, indel F1 99.57%
+- [x] **neanderthal_ancient_dna** — Vindija 33.19(Pääbo, 2022 노벨상 연구
+  데이터)로 고대 DNA 특화 분석. mapDamage로 deamination 패턴 확인,
+  HG002와 변이 비교
+- [x] **somatic_variant_calling** — SEQC2 HCC1395/HCC1395BL 전체 게놈으로
+  Mutect2 완주. High-Confidence 영역 기준 SNV recall 88.2%/precision 98.1%,
+  indel recall 89.1%/precision 60.6%
 
-### 확장
-- [ ] **somatic_variant_calling** - 종양/정상 쌍 비교 (Mutect2)
-- [ ] **cnv_sv_detection** - 카피수 변이, 구조 변이 탐지
-- [ ] **variant_annotation** - 변이 기능적 주석
-- [ ] **population_genetics** - 여러 샘플 통합 집단유전학 분석
+### 예정
+- [ ] **cnv_sv_detection** — 카피수 변이, 구조 변이 탐지
+- [ ] **variant_annotation** — 변이 기능적 주석 (VEP)
+- [ ] **population_genetics** — 여러 샘플 통합 집단유전학 분석
 
 각 실습은 하위 폴더로 구성되며, 폴더 안에 README, ANALYSIS_LOG, scripts 등을
 따로 둡니다.
 
+## 폴더 구조
+WGS_WES_Practice/
+├── README.md - 이 파일
+├── .gitignore
+├── germline_variant_calling/
+├── neanderthal_ancient_dna/
+└── somatic_variant_calling/
+
 ## 참고
 
 이전 실습(`rnaseq-lab`, `longread-seq-lab`)과 마찬가지로:
-- 실제 공개 데이터(GIAB 벤치마크 샘플, 1000 Genomes 등)로 진행
+- 실제 공개 데이터(GIAB, SEQC2, ENA 등)로 진행
 - 표준/gold standard 도구 우선 사용
 - 무거운 원본 데이터/중간 산출물은 git에서 제외, 가벼운 결과만 커밋
+
+### 도커/공용 서버 운영 관련 교훈 (somatic_variant_calling에서 습득)
+
+대용량 데이터를 다룰 때는 도커 컨테이너가 `-v`로 명시 마운트 안 한 경로
+(임시 파일, 컨테이너 자체 로그)에 뭘 쓰는지 항상 주의해야 함. 이게 호스트
+루트 파티션을 채워서 도커 데몬 자체가 죽는 사고로 이어질 수 있음. 이후
+모든 스크립트에 다음을 기본 적용:
+- `-v "$REPO_ROOT/tmp":/tmp`, `-e TMPDIR=/tmp` — 임시파일 격리
+- `--log-driver=none` — 컨테이너 자체 로그 비활성화 (호스트에 별도 로그
+  남기므로 실질적 손실 없음)
+- GATK 등 자바 도구는 `-Djava.io.tmpdir=/tmp`, `--tmp-dir /tmp`도 추가

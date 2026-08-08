@@ -1,0 +1,10 @@
+2026-08-03 19:02:16 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-08-04 15:59:30 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-08-05 14:39:14 | staphb/bwa:latest -> staphb/bwa@sha256:c378da1005eca538e1ede401dcd3af8b81a691eb4213e48e7678310e595d07e0
+2026-08-05 14:39:14 | staphb/samtools:latest -> staphb/samtools@sha256:20510ee4da54560f4a1988568a6d2f9bc022a0ea564b0c8912b08cca9177f886
+2026-08-06 18:04:12 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-07 00:11:23 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-08 15:50:02 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-08 16:01:30 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-08 16:05:37 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
+2026-08-08 16:24:22 | broadinstitute/gatk:4.6.2.0 -> broadinstitute/gatk@sha256:71b17ee42d149e8ec112603f5305c873ab60d93949ef8bb62a4fff85427f56fb
