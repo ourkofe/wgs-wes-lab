@@ -8,6 +8,7 @@ results/*/*.bai
 *.cram
 **/results/*/*.bam
 **/results/*/*.bai
+**/results/*/*.sai
 
 # R 관련
 *.rds
